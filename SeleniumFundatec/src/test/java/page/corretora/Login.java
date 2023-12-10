@@ -80,7 +80,6 @@ public class Login {
     public boolean acharErroCpf() {
         apertarBotaoPF();
         WebElement erroCpf = driver.findElement(By.xpath("//span[contains(text(),'CPF inválido')]"));
-        erroCpf.click();
         if (erroCpf == null) {
             return false;
         } else {
@@ -91,7 +90,6 @@ public class Login {
     public boolean acharErroCpfCurto() {
         apertarBotaoPF();
         WebElement erroCpf = driver.findElement(By.xpath("//span[contains(text(),'Tamanho inválido.')]"));
-        erroCpf.click();
         if (erroCpf == null) {
             return false;
         } else {
@@ -102,7 +100,6 @@ public class Login {
     public boolean acharErroDataNascimento() {
         apertarBotaoPF();
         WebElement erroDataNascimento = driver.findElement(By.xpath("//span[contains(text(),'A data não pode ser futura')]"));
-        erroDataNascimento.click();
         if (erroDataNascimento == null) {
             return false;
         } else {

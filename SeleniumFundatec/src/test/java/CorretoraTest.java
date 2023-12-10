@@ -13,6 +13,7 @@ import java.time.Duration;
 public class CorretoraTest {
     static WebDriver driver;
     static Login login;
+
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
         System.setProperty("webdriver.chrome.driver","C:\\chromedriver-win64/chromedriver.exe");
@@ -34,6 +35,7 @@ public class CorretoraTest {
 
     @Test
     public void testarCpfInvalido(){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         login.preencherCampoCpf("436.434.634-63");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         login.acharErroCpf();
@@ -41,6 +43,7 @@ public class CorretoraTest {
 
     @Test
     public void testarCpfCurto(){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         login.preencherCampoCpf("436.434.634-6");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         login.acharErroCpfCurto();
@@ -48,6 +51,7 @@ public class CorretoraTest {
 
     @Test
     public void testarDataNascimentoInvalida(){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         login.preencherCampoDataNascimento("1202121212");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         login.acharErroDataNascimento();
@@ -55,6 +59,7 @@ public class CorretoraTest {
 
     @Test
     public void testarNomeEmBranco(){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         login.campoNomeEmBranco();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         login.acharErroNomeEmBranco();
